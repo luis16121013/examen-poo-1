@@ -1,0 +1,29 @@
+requerimientos:
+	1:: registrar pedidos clientes()
+		*nombre cliente
+		*direccion cliente
+		==>estado-pedido=("ESPERA") == NO NESESITA LLENADO
+		*nombre pizza
+		*tamaño pizza
+		*total == PRECIO
+		==>hora pedido YY-MM-DD
+
+	2:: registrar entrega()
+		*hora de entrega hh:mm:ss < 40 => se realiza el cobro
+		==>estado-pedido=("ENTREGADO")
+
+
+	//MATRIX DE PRECIOS
+	0:pequeño
+	1:mediano
+	2:grande
+	3:maestro
+
+		  0    1    2    3
+	0 [ 35 - 50 - 60 - 80 ]  => "LADO OSCURO" == 0
+	1 [ 40 - 55 - 65 - 90 ]  => "YO SOY TU PADRE" == 1
+	2 [ 50 - 60 - 75 - 100]  => "QUE LA FUERZA TE ACOMPAÑE" == 2
+
+
+
+

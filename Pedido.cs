@@ -20,7 +20,7 @@ namespace examen
 
         public int[,] infoPizza = new int[3, 4];
 
-        List<Pedido> pedidos = new List<Pedido>();
+        List<Pedido> ListPedidos = new List<Pedido>();
 
         public Pedido(string nombre,string dir) {
             this.nameClient = nombre;
@@ -46,38 +46,53 @@ namespace examen
             return this.precio;
         }
 
+        //eston es el metodo que se encarga de registrar los datos la pizza
+        //pero no lo agrega a las lista de pedidos
+        //*calcular el precio == infoPizza[nombre][tamaño]
         public void registrarPizza(int nomPizza, int tamPizza)
         {
+            //se encarga de retornar el nombre de la pizza(indice-fila)
             this.namePizza = this.nombrePizza(nomPizza);
+
+            //se encarga de retornar el tamaño de la pizza(indice-columna)
             this.tam = this.tamañoPizza(tamPizza);
+
+            //se encarga calcular el precio mediante los indices
             this.precio = infoPizza[nomPizza, tamPizza];
         }
         
-        public void agregarPedido(Pedido p) {
-            pedidos.Add(p);
+        //se encarga de agregar el pedido a la lista
+        public void agregarPedido(Pedido p) {//recibe un objeto de tipo pedido
+            ListPedidos.Add(p);//se agrega a la lista
         }
+
+
+        //lista todos los pedidos que esten en "ESPERA"
         public string listarPedidos() {
-            string allPedidos = "";
-            foreach (var datos in pedidos) {
-                if(!datos.entrega){
+            string allPedidos = "";//creamos un contenedor de la lista vacia
+            foreach (var datos in ListPedidos) {//recorre toda la lista
+                //(!datos.entrega)
+                if(datos.entrega==false){//filtra solo los que se encuentren en "ESPERA"
                     allPedidos += "CLIENTE: " + datos.nameClient + "//DIRECCION: " + datos.address + "//PAGO : $/ " + datos.precio + "\n";
                 }
             }
-            return allPedidos;
+            return allPedidos;//retorna en formato text la lista
         }
-        public void realizarEntrega(string nombre){
-            foreach (var datos in pedidos)
+
+        //cambia el valor de "ESPERA=false" a "ENTREGADO=true"
+        public void realizarEntrega(string nombre){//recibe el nombre del  cliente
+            foreach (var datos in ListPedidos)//busca en la lista el cliente
             {
-                if (datos.nameClient==nombre)
+                if (datos.nameClient==nombre)//verifica el cliente
                 {
-                    datos.entrega = true;
-                    break;
+                    datos.entrega = true;//cambiamos el estado a entregado
+                    break;//terminamos el bucle
                 }
             }
         }
 
 
-        private string nombrePizza(int posicion) {
+        private string nombrePizza(int posicion) {//retorna el nombre de la pizza
             if (posicion==0) {
                 return "lado oscuro";
             }else if(posicion==1){
@@ -87,7 +102,7 @@ namespace examen
             }
             return "";
         }
-        private string tamañoPizza(int posicion)
+        private string tamañoPizza(int posicion)//retorna el tamaño de la pizza
         {
             if (posicion == 0)
             {
