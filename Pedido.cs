@@ -8,6 +8,7 @@ namespace examen
 {
     class Pedido
     {
+        //reque este es el comentario que se agrego
         //datos cliente
         public string nameClient;
         public string address;
