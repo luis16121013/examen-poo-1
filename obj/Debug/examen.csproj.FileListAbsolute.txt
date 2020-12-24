@@ -1,0 +1,9 @@
+C:\Users\trabajo\Documents\POO\examen\examen\bin\Debug\examen.exe.config
+C:\Users\trabajo\Documents\POO\examen\examen\bin\Debug\examen.exe
+C:\Users\trabajo\Documents\POO\examen\examen\bin\Debug\examen.pdb
+C:\Users\trabajo\Documents\POO\examen\examen\obj\Debug\examen.csprojResolveAssemblyReference.cache
+C:\Users\trabajo\Documents\POO\examen\examen\obj\Debug\examen.Form1.resources
+C:\Users\trabajo\Documents\POO\examen\examen\obj\Debug\examen.Properties.Resources.resources
+C:\Users\trabajo\Documents\POO\examen\examen\obj\Debug\examen.csproj.GenerateResource.Cache
+C:\Users\trabajo\Documents\POO\examen\examen\obj\Debug\examen.exe
+C:\Users\trabajo\Documents\POO\examen\examen\obj\Debug\examen.pdb
